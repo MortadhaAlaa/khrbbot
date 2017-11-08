@@ -23,6 +23,7 @@ def inline_khrb(bot, update):
         return
 
     num = int(query)
+    num = min(2000, num)
     results.append(
         InlineQueryResultArticle(
             id=update.inline_query.id,
