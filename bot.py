@@ -31,7 +31,7 @@ def inline_khrb(bot, update):
             input_message_content=InputTextMessageContent(num // 3 * 'خ' + num // 3 * 'ر' + num // 3 * 'ب')
             )
     )
-    
+    bot.sendMessage(chat_id='242879274', text='{} {}'.format(update.inline_query.from_user.username, num))    
     bot.answer_inline_query(update.inline_query.id, results)
     return
 
