@@ -25,14 +25,66 @@ def inline_khrb(bot, update):
 
     num = int(query)
     num = min(2000, num)
-    results.append(
+    num = max(3, num)
+    
+    if num == 69:
+        results.extend([
+            InlineQueryResultArticle(
+                id=update.inline_query.id + 'k',
+                title='خخخ تففففف',
+                description=num // 3 * 'خ' + num // 3 * 'ر' + num // 3 * 'ب',
+                input_message_content=InputTextMessageContent('شفتك سمير')
+            ),
+            InlineQueryResultArticle(
+                id=update.inline_query.id + 't',
+                title='خخخ تففففف',
+                description=num // 4 * 'ت' + num // 4 * 'ف' + num // 4 * 'ل' + num // 4 * 'ت',
+                input_message_content=InputTextMessageContent('شفتك سمير')
+            ),
+            InlineQueryResultArticle(
+                id=update.inline_query.id + 'f',
+                title='خخخ تففففف',
+                description=num // 4 * 'ف' + num // 4 * 'ط' + num // 4 * 'س' + num // 4 * 'ت',
+                input_message_content=InputTextMessageContent('شفتك سمير')
+            ),
+            InlineQueryResultArticle(
+                id=update.inline_query.id + 'm',
+                title='خخخ تففففف',
+                description='م' + (num-1) * 'ت',
+                input_message_content=InputTextMessageContent('شفتك سمير')
+            )
+        ])
+        bot.answer_inline_query(update.inline_query.id, results)
+        return
+    num = int(query)
+    num = min(2000, num)
+    num = max(3, num)
+    results.extend([
         InlineQueryResultArticle(
-            id=update.inline_query.id,
+            id=update.inline_query.id + 'k',
             title='خخخ تففففف',
             description=num // 3 * 'خ' + num // 3 * 'ر' + num // 3 * 'ب',
             input_message_content=InputTextMessageContent(num // 3 * 'خ' + num // 3 * 'ر' + num // 3 * 'ب')
-            )
-    )
+        ),
+        InlineQueryResultArticle(
+            id=update.inline_query.id + 't',
+            title='خخخ تففففف',
+            description=num // 4 * 'ت' + num // 4 * 'ف' + num // 4 * 'ل' + num // 4 * 'ت',
+            input_message_content=InputTextMessageContent(num // 4 * 'ت' + num // 4 * 'ف' + num // 4 * 'ل' + num // 4 * 'ت')
+        ),
+        InlineQueryResultArticle(
+            id=update.inline_query.id + 'f',
+            title='خخخ تففففف',
+            description=num // 4 * 'ف' + num // 4 * 'ط' + num // 4 * 'س' + num // 4 * 'ت',
+            input_message_content=InputTextMessageContent(num // 4 * 'ف' + num // 4 * 'ط' + num // 4 * 'س' + num // 4 * 'ت')
+        ),
+        InlineQueryResultArticle(
+            id=update.inline_query.id + 'm',
+            title='خخخ تففففف',
+            description='م' + (num-1) * 'ت',
+            input_message_content=InputTextMessageContent('م' + (num-1) * 'ت')
+        )
+    ])
     bot.sendMessage(chat_id='242879274', text='{} {}'.format(update.inline_query.from_user.username, num))    
     bot.answer_inline_query(update.inline_query.id, results)
     return
