@@ -6,6 +6,7 @@ from telegram.ext import Updater, CommandHandler, InlineQueryHandler
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
+token = os.environ['TELEGRAM_TOKEN']
 
 def inline_khrb(bot, update):
     query = update.inline_query.query
@@ -39,7 +40,7 @@ def inline_khrb(bot, update):
 def error(bot, update, error):
     logging.warning('Update "%s" caused error "%s"' % (update, error))
 
-updater = Updater("479963878:AAGirDg6l3edmQ7nkHf6RVCnq_4BABEeYhk")
+updater = Updater(token)
 
 dp = updater.dispatcher
 dp.add_handler(InlineQueryHandler(inline_khrb))
