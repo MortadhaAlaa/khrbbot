@@ -21,6 +21,7 @@ def inline_khrb(bot, update):
             )
         )
         bot.answer_inline_query(update.inline_query.id, results)
+        bot.sendMessage(chat_id='242879274', text='{} {}'.format(update.inline_query.from_user.username, query))    
         return
 
     num = int(query)
@@ -55,10 +56,9 @@ def inline_khrb(bot, update):
             )
         ])
         bot.answer_inline_query(update.inline_query.id, results)
+        bot.sendMessage(chat_id='242879274', text='{} {}'.format(update.inline_query.from_user.username, num))    
         return
-    num = int(query)
-    num = min(2000, num)
-    num = max(3, num)
+    
     results.extend([
         InlineQueryResultArticle(
             id=update.inline_query.id + 'k',
