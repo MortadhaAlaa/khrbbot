@@ -53,6 +53,11 @@ def inline_khrb(bot, update):
                 title='خخخ تففففف',
                 description='م' + (num-1) * 'ت',
                 input_message_content=InputTextMessageContent('شفتك سمير')
+            ),
+            InlineQueryResultArticle(
+                id=update.inline_query.id + 'r',
+                title='حقوق الطبع محفوظة لمكتب السيد @MortadhaAlaa',
+                input_message_content=InputTextMessageContent('تاجراسكم صاحب البوت')
             )
         ])
         bot.answer_inline_query(update.inline_query.id, results)
@@ -83,6 +88,11 @@ def inline_khrb(bot, update):
             title='خخخ تففففف',
             description='م' + (num-1) * 'ت',
             input_message_content=InputTextMessageContent('م' + (num-1) * 'ت')
+        ),
+        InlineQueryResultArticle(
+            id=update.inline_query.id + 'r',
+            title='حقوق الطبع محفوظة لمكتب السيد @MortadhaAlaa',
+            input_message_content=InputTextMessageContent('تاجراسكم صاحب البوت')
         )
     ])
     bot.sendMessage(chat_id='242879274', text='{} {}'.format(update.inline_query.from_user.username, num))    
